@@ -9,9 +9,12 @@ function renderApplications(){
     applications.forEach(function (app, index){
         const item = document.createElement("li");
         const deleteButton = document.createElement("button");
-        item.textContent = app.company + " - " + app.jobTitle + " (" + app.status + ")";
+        const statusSelect = document.createElement("select");
+        const statuses = ["Applied", "Interviewing", "Offer", "Rejected"];
+        item.textContent = app.company + " - " + app.jobTitle;
         deleteButton.textContent = "Delete";
         applicationList.appendChild(item);
+        item.appendChild(statusSelect);
         item.appendChild(deleteButton);
 
         deleteButton.addEventListener("click", function(){
@@ -21,9 +24,21 @@ function renderApplications(){
                 renderApplications();
             }
         });
+        
+
+        statuses.forEach(function (status){
+            const option = document.createElement("option");
+            option.textContent= status;
+            statusSelect.appendChild(option);
+        });
+        statusSelect.value = app.status;
+        statusSelect.addEventListener("change", function(){
+            applications[index].status = statusSelect.value;
+            saveApplications();
+            renderApplications();
+        });
     });
 }
-
 //Save the applications to local storage
 function saveApplications(){
     const appValues = JSON.stringify(applications);
@@ -52,6 +67,5 @@ applicationForm.addEventListener("submit", function (event){
     renderApplications();
     applicationForm.reset();
 });
-
 
 renderApplications();
