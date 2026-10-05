@@ -10,36 +10,51 @@
     <body>
         <h1>Job Application Tracker Form</h1>
         <form id="applicationForm">
+            <div class="field">
+                <label for="company">Company</label>
+                <input type="text" id="company" required>
+            </div>
 
-            <label for="company">Company</label>
-            <input type="text" id="company">
+            <div class="field">
+                <label for="jobTitle">Job Title</label>
+                <input type="text" id="jobTitle" required>
+            </div>
 
-            <label for="jobTitle">Job Title</label>
-            <input type="text" id="jobTitle">
+            <div class="field">
+                <label for="location">Location</label>
+                <input type="text" id="location" required>
+            </div>
 
-            <label for="location">Location</label>
-            <input type="text" id="location">
+            <div class="field">
+                <label for="contact">Contact Info</label>
+                <input type="text" id="contact">
+            </div>
+            
+            <div class="field">
+                <label for="dateApplied">Date</label>
+                <input type="date" id="dateApplied" required>
+            </div>
 
-            <label for="contact">Contact Info</label>
-            <input type="text" id="contact">
+            <div class="field">
+                <label for="status">Status</label>
+                <select id="status" required>
+                    <option>Applied</option>
+                    <option>Interviewing</option>
+                    <option>Offer</option>
+                    <option>Rejected</option>
+                </select>
+            </div>
 
-            <label for="dateApplied">Date</label>
-            <input type="date" id="dateApplied">
-
-            <label for="status">Status</label>
-            <select id="status">
-                <option>Applied</option>
-                <option>Interviewing</option>
-                <option>Offer</option>
-                <option>Rejected</option>
-            </select>
-
-            <label for="url">Job Website</label>
-            <input type="url" id="url">
-
-            <label for="notes">Notes</label>
-            <textarea id="notes" ></textarea>
-
+            <div class="field">
+                <label for="url">Job Website</label>
+                <input type="url" id="url">
+            </div>
+            
+            <div class="field">
+                <label for="notes">Notes</label>
+                <textarea id="notes" ></textarea>
+            </div>
+            
             <button type="submit" id="addJob">Add Application</button>
         </form>
         <ul id="applicationList"></ul>
