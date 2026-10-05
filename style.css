@@ -1,3 +1,38 @@
+:root {
+    --bg-color: #1a1a2e;
+    --text-color: #eeeeee;
+    --accent-color: #00bcd4;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: sans-serif;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+label {
+    color: var(--text-color);
+}
+
+button {
+    padding :15px;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 6;
+    cursor: pointer;
+}
+
+button:hover{
+    bg-color: #2e2e1a;
+    
+}
+
 #applicationForm{
     max-width: 500px;
     margin: 0 auto;
