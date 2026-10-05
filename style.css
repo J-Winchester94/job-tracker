@@ -2,7 +2,10 @@
     --bg-color: #1a1a2e;
     --text-color: #eeeeee;
     --accent-color: #00bcd4;
+    --accent-hover: #4dd0e1;
 }
+
+/* Base */
 
 body {
     background-color: var(--bg-color);
@@ -19,19 +22,22 @@ label {
     color: var(--text-color);
 }
 
+/* Buttons */
+
 button {
-    padding :15px;
+    padding: 15px;
     background-color: var(--accent-color);
     color: var(--bg-color);
     border: none;
-    border-radius: 6;
+    border-radius: 6px;
     cursor: pointer;
 }
 
 button:hover{
-    bg-color: #2e2e1a;
-    
+    background-color: var(--accent-hover);
 }
+
+/* Form */
 
 #applicationForm{
     max-width: 500px;
