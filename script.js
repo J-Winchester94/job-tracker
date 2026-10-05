@@ -1,8 +1,22 @@
 const applicationForm = document.getElementById("applicationForm");
+const applications = [];
+const applicationList = document.getElementById("applicationList");
+
+
+function renderApplications(){
+    applicationList.innerHTML="";
+
+    for (const app of applications){
+        const item = document.createElement("li");
+        item.textContent = app.company + " - " + app.jobTitle + " (" + app.status + ")";
+        applicationList.appendChild(item);
+    }
+}
 
 applicationForm.addEventListener("submit", function (event){
     event.preventDefault();
 
+    //Create Object consisting of values in the form
     const application = {
         company: document.getElementById("company").value,
         jobTitle: document.getElementById("jobTitle").value,
@@ -14,6 +28,7 @@ applicationForm.addEventListener("submit", function (event){
         notes: document.getElementById("notes").value
     };
 
-    console.log(application);
+    applications.push(application);
+    renderApplications();
+    applicationForm.reset();
 });
-
