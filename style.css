@@ -3,7 +3,7 @@
     --text-color: #eeeeee;
     --accent-color: #00bcd4;
     --accent-hover: #4dd0e1;
-    --
+    --card-color: #24243e;
 }
 
 /* Base */
@@ -60,13 +60,39 @@ input, select, textarea{
     gap: 4px;
 }
 
-/* Job Cards */
+/* Application List */
 
-.card {
-    padding :0;
+#applicationList {
+    list-style: none;
+    padding: 0;
     max-width: 500px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
+}
+
+.card {
+    background-color: var(--card-color);
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.card h3, .card p {
+    margin: 4px 0;
+}
+
+.card a {
+    color: var(--accent-color);
+}
+
+/* delete button css */
+.delete-button{
+    opacity: 50%;
+}
+
+.delete-button:hover {
+    background-color: #820303;
+    opacity: 100%;
+    color: var(--text-color);
 }

@@ -28,7 +28,7 @@ function renderApplications(){
             const link = document.createElement("a");
             link.href = app.url;
             link.textContent = "View posting";
-            link.target + "_blank";
+            link.target = "_blank";
             link.rel = "noopener";
             item.appendChild(link);
         }
@@ -44,6 +44,7 @@ function renderApplications(){
 
         //Create button next to every card
         deleteButton.textContent = "Delete";
+        deleteButton.className = "delete-button";
         deleteButton.addEventListener("click", function(){
             if (confirm("Delete this application?")){
                 applications.splice(index, 1);
@@ -58,7 +59,7 @@ function renderApplications(){
             option.textContent= status;
             statusSelect.appendChild(option);
         });
-        
+
         statusSelect.value = app.status;
         statusSelect.addEventListener("change", function(){
             applications[index].status = statusSelect.value;
