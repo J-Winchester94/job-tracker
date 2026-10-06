@@ -74,7 +74,7 @@ function renderApplications(){
         // Create dropdown menu to update status of application and save it
         statuses.forEach(function (status){
             const option = document.createElement("option");
-            option.textContent= status;
+            option.textContent = status;
             statusSelect.appendChild(option);
         });
 
