@@ -8,15 +8,28 @@ function renderApplications(){
 
     applications.forEach(function (app, index){
         const item = document.createElement("li");
-        const deleteButton = document.createElement("button");
+        item.className = "card";
+
+        const title = document.createElement("h3");
+        title.textContent = app.jobTitle;
+        item.appendChild(title);
+
+        const details = document.createElement("p");
+        details.textContent = app.company + " · " + app.location;
+        item.appendChild(details);
+
+        const dateApplied = document.createElement("p");
+        dateApplied.textContent = "Applied: " + app.date;
+        item.appendChild(dateApplied);
+
+        applicationList.appendChild(item);
+
         const statusSelect = document.createElement("select");
         const statuses = ["Applied", "Interviewing", "Offer", "Rejected"];
-        item.textContent = app.company + " - " + app.jobTitle;
-        deleteButton.textContent = "Delete";
-        applicationList.appendChild(item);
+        const deleteButton = document.createElement("button");
         item.appendChild(statusSelect);
         item.appendChild(deleteButton);
-
+        deleteButton.textContent = "Delete";
         deleteButton.addEventListener("click", function(){
             if (confirm("Delete this application?")){
                 applications.splice(index, 1);
