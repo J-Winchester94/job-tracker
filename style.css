@@ -60,6 +60,16 @@ input, select, textarea{
     gap: 4px;
 }
 
+/* Controls */
+#summary{
+    text-align: center;
+}
+
+#controls{
+    max-width: 500px;
+    margin: 20px auto;
+}
+
 /* Application List */
 
 #applicationList {
@@ -95,8 +105,4 @@ input, select, textarea{
     background-color: #820303;
     opacity: 100%;
     color: var(--text-color);
-}
-
-#summary{
-    text-align: center;
 }

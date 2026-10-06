@@ -6,7 +6,7 @@ const applicationList = document.getElementById("applicationList");
 function renderApplications(){
     applicationList.innerHTML="";
 
-    //Display applications status numbers
+    //Display applications status summary
     const counts = { Applied: 0, Interviewing: 0, Offer: 0, Rejected: 0};
     applications.forEach(function(app){
         counts[app.status]++;
@@ -14,14 +14,19 @@ function renderApplications(){
 
     const summary = document.getElementById("summary");
     summary.textContent =
-        " · Applied: " + counts.Applied +
+        "Applied: " + counts.Applied +
         " · Interviewing: " + counts.Interviewing +
         " · Offer: " + counts.Offer +
         " · Rejected: " + counts.Rejected;
 
+    const filter = document.getElementById("filterStatus").value;
+
 
     // Create cards for applied jobs
     applications.forEach(function (app, index){
+        if (filter !== "All" && app.status !== filter){
+            return;
+        }
         const item = document.createElement("li");
         item.className = "card";
 
@@ -108,6 +113,10 @@ applicationForm.addEventListener("submit", function (event){
     saveApplications();
     renderApplications();
     applicationForm.reset();
+});
+
+document.getElementById("filterStatus").addEventListener("change", function (){
+    renderApplications();
 });
 
 renderApplications();

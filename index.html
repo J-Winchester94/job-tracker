@@ -57,8 +57,18 @@
 
             <button type="submit" id="addJob">Add Application</button>
         </form>
-
-        <p id="summary"></p>
+        
+        <div id="controls">
+            <p id="summary"></p>
+            <label for="filterStatus">Filter Status</label>
+            <select id="filterStatus">
+                <option>All</option>
+                <option>Applied</option>
+                <option>Interviewing</option>
+                <option>Offer</option>
+                <option>Rejected</option>
+            </select>
+        </div>
 
         <ul id="applicationList"></ul>
         <script src="script.js"></script>
