@@ -6,6 +6,19 @@ const applicationList = document.getElementById("applicationList");
 function renderApplications(){
     applicationList.innerHTML="";
 
+    //Display applications status numbers
+    const counts = { Applied: 0, Interviewing: 0, Offer: 0, Rejected: 0};
+    applications.forEach(function(app){
+        counts[app.status]++;
+    });
+
+    const summary = document.getElementById("summary");
+    summary.textContent =
+        " · Applied: " + counts.Applied +
+        " · Interviewing: " + counts.Interviewing +
+        " · Offer: " + counts.Offer +
+        " · Rejected: " + counts.Rejected;
+
 
     // Create cards for applied jobs
     applications.forEach(function (app, index){

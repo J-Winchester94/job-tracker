@@ -96,3 +96,7 @@ input, select, textarea{
     opacity: 100%;
     color: var(--text-color);
 }
+
+#summary{
+    text-align: center;
+}
