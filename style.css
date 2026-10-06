@@ -98,6 +98,10 @@ input, select, textarea{
     margin: 6px 0 10px;
 }
 
+.card select {
+    margin-right: 8px;
+}
+
 /* delete button css */
 .delete-button{
     opacity: 50%;
