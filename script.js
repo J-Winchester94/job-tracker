@@ -60,7 +60,7 @@ function renderApplications(){
         item.appendChild(statusSelect);
         item.appendChild(deleteButton);
 
-        //Create button next to every card
+        //Create delete button on every card
         deleteButton.textContent = "Delete";
         deleteButton.className = "delete-button";
         deleteButton.addEventListener("click", function(){
@@ -71,7 +71,7 @@ function renderApplications(){
             }
         });
         
-
+        // Create dropdown menu to update status of application and save it
         statuses.forEach(function (status){
             const option = document.createElement("option");
             option.textContent= status;
