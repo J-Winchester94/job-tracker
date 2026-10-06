@@ -6,6 +6,8 @@ const applicationList = document.getElementById("applicationList");
 function renderApplications(){
     applicationList.innerHTML="";
 
+
+    // Create cards for applied jobs
     applications.forEach(function (app, index){
         const item = document.createElement("li");
         item.className = "card";
@@ -22,13 +24,25 @@ function renderApplications(){
         dateApplied.textContent = "Applied: " + app.date;
         item.appendChild(dateApplied);
 
+        if (app.url){
+            const link = document.createElement("a");
+            link.href = app.url;
+            link.textContent = "View posting";
+            link.target + "_blank";
+            link.rel = "noopener";
+            item.appendChild(link);
+        }
+
         applicationList.appendChild(item);
 
+        // Dropdown box and options
         const statusSelect = document.createElement("select");
         const statuses = ["Applied", "Interviewing", "Offer", "Rejected"];
         const deleteButton = document.createElement("button");
         item.appendChild(statusSelect);
         item.appendChild(deleteButton);
+
+        //Create button next to every card
         deleteButton.textContent = "Delete";
         deleteButton.addEventListener("click", function(){
             if (confirm("Delete this application?")){
@@ -44,6 +58,7 @@ function renderApplications(){
             option.textContent= status;
             statusSelect.appendChild(option);
         });
+        
         statusSelect.value = app.status;
         statusSelect.addEventListener("change", function(){
             applications[index].status = statusSelect.value;
