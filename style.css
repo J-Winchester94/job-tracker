@@ -94,6 +94,8 @@ input, select, textarea{
 
 .card a {
     color: var(--accent-color);
+    display: block;
+    margin: 6px 0 10px;
 }
 
 /* delete button css */
